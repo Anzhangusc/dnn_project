@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD57C5C6201ADC7600A7B30E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD57C5C5201ADC7600A7B30E /* main.cpp */; };
+		DD57C5D0201AE2A400A7B30E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD57C5CE201AE2A400A7B30E /* main.cpp */; };
+		DD57C5D1201AE2A400A7B30E /* BPnet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD57C5CF201AE2A400A7B30E /* BPnet.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,9 @@
 
 /* Begin PBXFileReference section */
 		DD57C5C2201ADC7600A7B30E /* dnn_in_c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = dnn_in_c; sourceTree = BUILT_PRODUCTS_DIR; };
-		DD57C5C5201ADC7600A7B30E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DD57C5CD201AE2A400A7B30E /* BPnet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPnet.h; sourceTree = "<group>"; };
+		DD57C5CE201AE2A400A7B30E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		DD57C5CF201AE2A400A7B30E /* BPnet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BPnet.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,9 @@
 		DD57C5C4201ADC7600A7B30E /* dnn_in_c */ = {
 			isa = PBXGroup;
 			children = (
-				DD57C5C5201ADC7600A7B30E /* main.cpp */,
+				DD57C5CF201AE2A400A7B30E /* BPnet.cpp */,
+				DD57C5CD201AE2A400A7B30E /* BPnet.h */,
+				DD57C5CE201AE2A400A7B30E /* main.cpp */,
 			);
 			path = dnn_in_c;
 			sourceTree = "<group>";
@@ -119,7 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD57C5C6201ADC7600A7B30E /* main.cpp in Sources */,
+				DD57C5D0201AE2A400A7B30E /* main.cpp in Sources */,
+				DD57C5D1201AE2A400A7B30E /* BPnet.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

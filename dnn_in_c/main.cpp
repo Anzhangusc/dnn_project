@@ -1,16 +1,46 @@
-//
-//  main.cpp
-//  dnn_in_c
-//
-//  Created by 张安 on 1/25/18.
-//  Copyright © 2018 anzhang. All rights reserved.
-//
+#include "BPnet.h"
 
-#include <iostream>
+int main()
+{
+    BpNet testNet;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    int a = 0;
+    // learning training set
+    vector<double> samplein[4];
+    vector<double> sampleout[4];
+    samplein[0].push_back(0); samplein[0].push_back(0); sampleout[0].push_back(0); 
+    samplein[1].push_back(0); samplein[1].push_back(1); sampleout[1].push_back(1); 
+    samplein[2].push_back(1); samplein[2].push_back(0); sampleout[2].push_back(1); 
+    samplein[3].push_back(1); samplein[3].push_back(1); sampleout[3].push_back(0); 
+    sample sampleInOut[4];
+    for (int i = 0; i < 4; i++)
+    {
+        sampleInOut[i].in = samplein[i];
+        sampleInOut[i].out = sampleout[i];
+    }
+    vector<sample> sampleGroup(sampleInOut, sampleInOut + 4);
+    testNet.training(sampleGroup, 0.0001);
+
+    // test data
+    vector<double> testin[4];
+    vector<double> testout[4];
+    testin[0].push_back(0.1);   testin[0].push_back(0.2);
+    testin[1].push_back(0.15);  testin[1].push_back(0.9);
+    testin[2].push_back(1.1);   testin[2].push_back(0.01);
+    testin[3].push_back(0.88);  testin[3].push_back(1.03);
+    sample testInOut[4];
+    for (int i = 0; i < 4; i++) testInOut[i].in = testin[i];
+    vector<sample> testGroup(testInOut, testInOut + 4);
+
+    // predict the test data and get the output
+    testNet.predict(testGroup);
+    for (int i = 0; i < testGroup.size(); i++)
+    {
+        for (int j = 0; j < testGroup[i].in.size(); j++) cout << testGroup[i].in[j] << "\t";
+        cout << "-- prediction :";
+        for (int j = 0; j < testGroup[i].out.size(); j++) cout << testGroup[i].out[j] << "\t";
+        cout << endl;
+    }
+
+    system("pause");
     return 0;
 }
